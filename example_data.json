@@ -1,0 +1,60 @@
+{
+  "reference_dms": [
+    {
+      "recipient_name": "Sarah Chen",
+      "recipient_title": "Product Manager",
+      "recipient_company": "TechCorp",
+      "message": "Hi [NAME], I came across your profile and was impressed by your work in [COMPANY]. I've been working on similar challenges with product strategy and thought it'd be great to connect. Would love to chat about your approach to [INTERESTS].",
+      "context": "Reached out after seeing her product launch",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Marcus Johnson",
+      "recipient_title": "Engineering Lead",
+      "recipient_company": "InnovateLabs",
+      "message": "Hey [NAME]! Your work on scaling infrastructure caught my eye. I'm working on something similar and could use insights from someone at your level. Free for a quick call?",
+      "context": "Found through mutual connection",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Elena Rodriguez",
+      "recipient_title": "VP of Growth",
+      "recipient_company": "StartupXYZ",
+      "message": "Hi [NAME], I've been following [COMPANY]'s growth and think you're doing something special. Would love to explore potential synergies - my team works on similar problems.",
+      "context": "Personalized based on recent funding announcement",
+      "success_indicator": "SUCCESS"
+    }
+  ],
+  "people": [
+    {
+      "profile_id": "johndoe123",
+      "name": "John Doe",
+      "title": "Senior Product Manager",
+      "company": "MegaCorp",
+      "industry": "Technology",
+      "personality_traits": "Data-driven, strategic, collaborative",
+      "interests": "Product strategy, user research, AI/ML",
+      "notes": "Recently promoted, posted about AI adoption"
+    },
+    {
+      "profile_id": "alice_smith",
+      "name": "Alice Smith",
+      "title": "Founder & CEO",
+      "company": "GrowthLabs",
+      "industry": "SaaS",
+      "personality_traits": "Visionary, hands-on, community-focused",
+      "interests": "Startup growth, developer tools, community building",
+      "notes": "Active on Twitter, speaks at conferences"
+    },
+    {
+      "profile_id": "bob_wilson",
+      "name": "Bob Wilson",
+      "title": "Director of Engineering",
+      "company": "CloudSystems",
+      "industry": "Infrastructure",
+      "personality_traits": "Technical, detail-oriented, mentor",
+      "interests": "System design, mentorship, open source",
+      "notes": "Contributes to Kubernetes, has blog"
+    }
+  ]
+}

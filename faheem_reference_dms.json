@@ -1,0 +1,125 @@
+{
+  "reference_dms": [
+    {
+      "recipient_name": "Seif",
+      "recipient_title": "Operations/Partnerships",
+      "recipient_company": "Fever/Dice",
+      "message": "Came across your work at Fever and Dice, really interesting space especially around scaling partnerships and experiences.\n\nI have been exploring how data can be used to understand which events, audiences, and partnerships actually drive the most traction, turning raw engagement data into clearer signals on what to double down on.\n\nStill early, but it feels relevant to partnership and growth decisions in experience led platforms.\n\nWould love to hear how you currently think about identifying high performing partnerships.\n\nThanks,\nFaheem",
+      "context": "Partnership scaling in experiences platform",
+      "success_indicator": "ENGAGEMENT"
+    },
+    {
+      "recipient_name": "Tom",
+      "recipient_title": "Analytics/Data",
+      "recipient_company": "Unknown",
+      "message": "Really resonated with your point around finding patterns and shifts early before they become obvious, that is exactly the kind of problem I have been exploring.\n\nI have been building an ML pipeline that takes raw business data and turns it into structured signals like segmentation, anomalies, and emerging trends. The interesting part for me has been less about generating insights and more about figuring out what those signals actually mean and when they are strong enough to act on.\n\nStill early, but I am trying to move toward systems that do not just report what happened, but surface what is changing and what questions should be asked next.\n\nWould be great to hear how you are thinking about this as you build.\n\nThanks,\nFaheem",
+      "context": "Finding emerging patterns before obvious",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Heera Sayendran",
+      "recipient_title": "Senior VC Coordinator",
+      "recipient_company": "Video Conferencing/AV Support",
+      "message": "Hey Faheem,\n\nThat makes sense and congrats on the move into the senior role, that's awesome.\n\nFair question on the relevance. What I've been building is less about 'data science' in the abstract, and more about turning raw operational data into clear signals.\n\nIn your case, I imagine there's a lot happening across sessions—usage patterns, recurring issues, setup delays, client experience, etc. The kind of thing that's tracked but not always translated into actionable insights.\n\nThat's the layer I've been exploring—helping surface patterns like what consistently causes friction, where things break, or what could be optimised across sessions.\n\nStill early and learning, but that's how I see it connecting.\n\nCurious what are the most common issues you end up dealing with day-to-day? So maybe i can work things thru it uk\n\nThanks,\nFaheem Dehalvi",
+      "context": "Operational data → clear signals for infrastructure teams",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Tom (RMIT student)",
+      "recipient_title": "Career Seeker",
+      "recipient_company": "RMIT/Data Annotation",
+      "message": "Hey,\n\nI'm an RMIT student (ex-NVIDIA) trying to get better at landing roles that are being posted (data/analytics/tech), and I've been reaching out to people who've gone through it already. You're working at Data Annotation right..\n\nWould really appreciate any advice on how you approached applications, stood out, or what actually worked vs what didn't.\n\nThanks a lot!\nFaheem Dehalvi",
+      "context": "Peer outreach for career advice",
+      "success_indicator": "ENGAGEMENT"
+    },
+    {
+      "recipient_name": "Carolyn",
+      "recipient_title": "Unknown role",
+      "recipient_company": "Unknown",
+      "message": "Heyy Carolyn,\n\nI'm a curious builder i am building a ML pipeline that converts raw data to properly segmented and sensible insight with reports and visualization (cost effective).\n\nThis works for any kind of industry we could scale to a plugin product, id love feedback on it\n\nRegards\nFaheem Dehalvi",
+      "context": "Product feedback from builders",
+      "success_indicator": "INQUIRY"
+    },
+    {
+      "recipient_name": "Athy Giannopoulos",
+      "recipient_title": "Learning Systems/LMS",
+      "recipient_company": "EdTech",
+      "message": "Hi Athy,\n\nUsing Canvas at RMIT, I've noticed students don't really know where they stand until it's too late—everything's there, but there's no clear benchmark.\n\nI've been prototyping a layer that segments students and shows relative standing (plus simple next-step nudges), so they get early clarity and can course-correct in time. It's gonna be anonymous ofc no other person can see where you stand by you'd know where you need to improve and how, raw data to insights is what im talking about now!\n\nFeels aligned with driving adoption and outcomes in LMS—would love your take, and explore if I could contribute to problems like this.\n\nThanks,\nFaheem Dehalvi",
+      "context": "At-risk student detection in learning systems",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Ayodeji Olowu",
+      "recipient_title": "Founder/Data",
+      "recipient_company": "Mirrorly",
+      "message": "Hi Deji,\n\nCame across Mirrorly and really liked the framing especially the idea of reverse engineering why something works instead of just staring at dashboards.\n\nI'm building in a slightly adjacent space, but more from the angle of trying to understand how 'signals to decisions' actually form in messy real-world data. Still early, mostly exploring and learning while building.\n\nWould be really interested to hear how you think about what actually makes marketing intelligence *actionable* vs just informative.\n\nThanks,\nFaheem",
+      "context": "Signals to decisions framework",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Bindi",
+      "recipient_title": "Systems Designer",
+      "recipient_company": "The Aluna Foundry",
+      "message": "Hello Ms Bindi,\n\nCame across The Aluna Foundry and your thinking around systems, rhythm, and protecting complexity without burning people out—really resonated with how I've been observing large-scale systems work.\n\nI'm still early in my journey, but I've been thinking a lot about how clarity actually emerges in complex environments, especially when multiple layers of systems, people, and decisions overlap.\n\nWould love to learn how you think about designing structure without over-constraining the system.\n\nThanks,\nFaheem",
+      "context": "Complex systems and structure design",
+      "success_indicator": "INQUIRY"
+    },
+    {
+      "recipient_name": "James",
+      "recipient_title": "Digital Health",
+      "recipient_company": "Healthcare Tech",
+      "message": "Hi James,\n\nI'm a student building in digital health and I really resonated with your post about simplifying care systems and removing unnecessary complexity.\n\nI don't come from a medical background, so a lot of what I notice is just from trying to understand systems as a user—and I keep running into how confusing workflows and decision layers become in healthcare.\n\nI've been thinking a lot about how much clarity matters more than features in these systems, especially for clinicians and patients.\n\nWould love to hear how you think about that trade-off while building.\n\nThanks,\nFaheem",
+      "context": "Clarity vs features in healthcare systems",
+      "success_indicator": "INQUIRY"
+    },
+    {
+      "recipient_name": "Devin",
+      "recipient_title": "Founder",
+      "recipient_company": "Konnect",
+      "message": "Hi Devin,\n\nKonnect is a really interesting take—especially the focus on consent and mental wellness in dating.\n\nI've worked closely with a friend building in a similar space, and one thing that stood out is how hard it is to understand *real connection vs surface-level engagement* from user behaviour.\n\nI've been building a layer that segments users based on interaction patterns and signals compatibility + intent more meaningfully—could be interesting for something like Konnect.\n\nWould love to exchange thoughts if you're open.\n\nThanks,\nFaheem",
+      "context": "User behavior segmentation in social products",
+      "success_indicator": "INQUIRY"
+    },
+    {
+      "recipient_name": "Abhishek",
+      "recipient_title": "Product + Analytics",
+      "recipient_company": "CropBytes",
+      "message": "Hi Abhishek,\n\nSaw your background across product + analytics (and your work at CropBytes)—really like how you're thinking at the intersection of AI and strategy.\n\nI'm building an AI layer that sits on top of product data and turns it into clear segmentation + decision signals (what to prioritise, who to target, what to improve). Feels like the kind of thing that could plug into product-led growth systems.\n\nSince you're building in a similar space, would love to exchange notes and get your take.\n\nThanks,\nFaheem",
+      "context": "AI + product data for growth decisions",
+      "success_indicator": "INQUIRY"
+    },
+    {
+      "recipient_name": "Simon Cable",
+      "recipient_title": "Operations/Business",
+      "recipient_company": "Unknown",
+      "message": "Heyy Simon,\n\nI'm a curious builder i am building a ML pipeline that converts raw data to properly segmented and sensible insight with reports and visualization.\n\nThis works for any kind of industry we could scale to a plugin product, id love feedback on it\n\nRegards\nFaheem Dehalvi\n\n---\n\nhere a link to the video of the demo Simon\n\nhttps://drive.google.com/file/d/14ylsVpNKgHrY2EUvUOLPFIviZZSUnHOo/view?usp=sharing\n\nwe can apply this to anywhere from segmenting students in a LMS to segmenting cyber security query logs to plugging it into CRMs for insights and business decisions.\n\npeople have a lot of data but dont know how to use it, i can help there.\n\nlet me know the first place you feel you could use this maybe we can work it out",
+      "context": "Multi-industry applications of data segmentation",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Keith",
+      "recipient_title": "Growth",
+      "recipient_company": "Everlab",
+      "message": "Hi Keith,\n\nSaw your work at Everlab—really interesting how you're scaling growth around AI-driven preventive health.\n\nI'm building a lightweight ML layer that turns raw product/user data into clear segmentation + actionable insights (what to target, retain, or improve). Feels like it could plug well into growth teams like yours.\n\nWould love your quick feedback on whether something like this is useful in your world.\n\nThanks,\nFaheem",
+      "context": "Growth team segmentation and targeting",
+      "success_indicator": "INQUIRY"
+    },
+    {
+      "recipient_name": "Rye Smith",
+      "recipient_title": "Founder/AI",
+      "recipient_company": "Unknown",
+      "message": "Hey Hey Rye,\n\nI was at the last Claude Code meetup at stone and chalk\n\nI'm jus a curious student and a builder.\n\nImagine Raw data converted to insights automatically.\nI'm building a budget-aware autonomous data processing pipeline.\n\nIt segments data, runs deterministic transforms, and only escalates to AI when a decision boundary is reached. So instead of 'LLM for everything,' it treats reasoning as a scarce resource.\n\nNet effect: lower token cost + more controlled decision-making.\n\nWould appreciate your thoughts on where this kind of system could be applied or if you know anyone who would be interested to scale this\n\nThank you so much for the read 😊\n\nRegards\nFaheem Dehalvi",
+      "context": "Budget-aware AI infrastructure at scale",
+      "success_indicator": "SUCCESS"
+    },
+    {
+      "recipient_name": "Div Misra",
+      "recipient_title": "Investor/Advisor",
+      "recipient_company": "Unknown",
+      "message": "Heyy Div,\n\nI'm a curious builder i am building a ML pipeline that converts raw data to properly segmented and sensible insight with reports and visualization.\n\nThis works for any kind of industry we could scale to a plugin product, id love feedback on it\n\nRegards\nFaheem Dehalvi\n\n---\n\nwhat makes these products actually usable? im making this product in such a way it can be a plug and play for apps like hubspot and works properly for even non technical stake holders",
+      "context": "Product-market fit and usability of data tools",
+      "success_indicator": "INQUIRY"
+    }
+  ],
+  "people": []
+}

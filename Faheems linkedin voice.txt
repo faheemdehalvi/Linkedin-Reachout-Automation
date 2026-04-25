@@ -1,0 +1,455 @@
+Faheems linkedin voice 
+
+1. Hi Seif,
+
+Came across your work at Fever and Dice, really interesting space especially around scaling partnerships and experiences.
+
+I have been exploring how data can be used to understand which events, audiences, and partnerships actually drive the most traction, turning raw engagement data into clearer signals on what to double down on.
+
+Still early, but it feels relevant to partnership and growth decisions in experience led platforms.
+
+Would love to hear how you currently think about identifying high performing partnerships.
+
+Thanks,
+Faheem
+
+2.Hi Tom,
+
+Really resonated with your point around finding patterns and shifts early before they become obvious, that is exactly the kind of problem I have been exploring.
+
+I have been building an ML pipeline that takes raw business data and turns it into structured signals like segmentation, anomalies, and emerging trends. The interesting part for me has been less about generating insights and more about figuring out what those signals actually mean and when they are strong enough to act on.
+
+Still early, but I am trying to move toward systems that do not just report what happened, but surface what is changing and what questions should be asked next.
+
+Would be great to hear how you are thinking about this as you build.
+
+Thanks,
+Faheem
+
+3. Heyy Heera,
+
+Hows it going, I see youre working as a Senior VC Coordinator. Actually im into the same field and work with data as a free lance data scientist how has done multiple realtime impact projects I was interested to know how you came across this opportunity and what youve been upto these days.
+
+Pls hit me back 
+
+Regards 
+Faheem Dehalvi
+
+Apr 16
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  1:56 PM
+Heyy jus following up with my request
+
+Wednesday
+Heera Sayendran sent the following message at 12:34 AM
+View Heera’s profileHeera Sayendran
+Heera Sayendran (She/Her)  12:34 AM
+Hey
+
+It’s been going well on my end. I moved into the Senior VC Coordinator role after building up experience in video conferencing and AV support—mostly working closely with meeting tech, client-facing sessions.
+
+Good to know that you are a data scientist but quite not sure how it’s related to my field.
+
+Faheem Dehalvi sent the following message at 12:45 AM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  12:45 AM
+Hey Heera,
+
+That makes sense and congrats on the move into the senior role, that’s awesome.
+
+Fair question on the relevance. What I’ve been building is less about 'data science' in the abstract, and more about turning raw operational data into clear signals.
+
+In your case, I imagine there’s a lot happening across sessions usage patterns, recurring issues, setup delays, client experience, etc. The kind of thing that’s tracked but not always translated into actionable insights.
+
+That’s the layer I’ve been exploring helping surface patterns like what consistently causes friction, where things break, or what could be optimised across sessions.
+
+Still early and learning, but that’s how I see it connecting.
+
+Curious what are the most common issues you end up dealing with day-to-day? So maybe i can work things thru it uk
+
+Thanks,
+Faheem Dehalvi
+
+Heera Sayendran sent the following message at 12:55 AM
+View Heera’s profileHeera Sayendran
+Heera Sayendran (She/Her)  12:55 AM
+Currently tracking things through powerapp integrated with powerbi 
+Which is working perfectly well for our reports.
+
+Faheem Dehalvi sent the following message at 1:22 AM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  1:22 AM
+That’s a solid setup PowerApps + Power BI usually covers reporting really well.
+
+What I’ve been exploring is more on the automation side taking the same raw operational data and automatically surfacing patterns without needing to manually check dashboards. Things like recurring failure points, unusual spikes in issues, or sessions likely to run into problems based on past trends.
+
+So less about replacing reporting, and more about reducing the manual effort of spotting problems early.
+
+Curious if you still find yourself having to dig through reports to catch certain issues?
+
+Thanks,
+Faheem
+
+Heera Sayendran sent the following message at 5:38 PM
+View Heera’s profileHeera Sayendran
+Heera Sayendran (She/Her)  5:38 PM
+Maintenance is well kept so we hardly have any recurring issues. 
+And even if we have issue those are like one off ones like system going offline or some one accidentally Removing the n/w cables, for those one we have set rules for the rooms to notify us.
+The only recurring issue I can think of is human error and that’s there we step in and give them training.
+
+Faheem Dehalvi sent the following message at 7:39 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  7:39 PM
+Haha fair that actually says a lot, your setup sounds pretty tight.
+
+Interesting that the only consistent issue is human error. I’ve been thinking a bit about that side too like whether patterns in usage or past mistakes could help identify where users struggle most, so training can be more targeted instead of reactive.
+
+Not something I’ve fully explored yet, but feels like a different kind of problem compared to system-level issues.
+
+Curious do you usually notice the same types of mistakes repeating across different users?
+
+Thanks,
+Faheem
+
+Heera Sayendran sent the following messages at 11:48 PM
+View Heera’s profileHeera Sayendran
+Heera Sayendran (She/Her)  11:48 PM
+🥲
+😅
+🥳
+
+
+
+Haha yeah, that’s an interesting way to look at it. From the system side, if there were consistent recurring issues, vendors would be in trouble pretty quickly—so most technical problems do get flagged, patched, and improved over time. There’s not much value in sticking with products that repeatedly fail at a system level.
+
+We do see a mix—some patterns repeat (like common setup or joining mistakes), but there are always new variations depending on the user, context, or setup. So it’s less about one fixed problem and more about evolving behaviour, which is where targeted training can definitely add value.
+
+4. Hey,
+
+I’m an RMIT student (ex-NVIDIA) trying to get better at landing roles that are being posted (data/analytics/tech), and I’ve been reaching out to people who’ve gone through it already. You're working at Data Annotation right..
+
+Would really appreciate any advice on how you approached applications, stood out, or what actually worked vs what didn’t.
+
+Thanks a lot!
+Faheem Dehalvi
+
+5. Heyy Carolyn, 
+
+I'm a curious builder i am building a ML pipeline that converts raw data to properly segmented and sensible insight with reports and visualization (cost effective). 
+
+This works for any kind of industry we could scale to a plugin product, id love feedback on it
+
+Regards 
+Faheem Dehalvi
+
+6. Hi Athy,
+
+Using Canvas at RMIT, I’ve noticed students don’t really know where they stand until it’s too late—everything’s there, but there’s no clear benchmark.
+
+I’ve been prototyping a layer that segments students and shows relative standing (plus simple next-step nudges), so they get early clarity and can course-correct in time. its gonna be anonymous ofc no other person can see where you stand by youd know where you need to improve and how, raw data to insights is what im talking about now!
+
+Feels aligned with driving adoption and outcomes in LMS—would love your take, and explore if I could contribute to problems like this.
+
+Thanks,
+Faheem Dehalvi
+
+Athy Giannopoulos sent the following message at 2:09 PM
+View Athy’s profileAthy Giannopoulos
+Athy Giannopoulos   2:09 PM
+Hi Faheem......sounds like a fascinating problem you're trying to solve, but I'm not hands-on the LMS side at the moment, so it's not resonating. But if you're trying to proactively identify & alert 'at-risk' students, that I think there's real value in that.
+
+Faheem Dehalvi sent the following message at 2:11 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  2:11 PM
+Yessss, what I’m actually trying to explore is exactly that: early identification of at-risk students and when to intervene before performance drops.
+
+Out of curiosity, in your experience, what usually makes those systems actually useful for staff vs just another dashboard?
+
+Athy Giannopoulos sent the following message at 2:16 PM
+View Athy’s profileAthy Giannopoulos
+Athy Giannopoulos   2:16 PM
+Ok so I can give you my take, based on what I've observed. Take Moodle, which has almost 3K plugins; most of those are essentially useless, & I've seen Moodle & other LMS's release many features that are never adopted or used.
+But to understand what's actually required, this depends on the business & it's operations. So building generic solutions (unless there's a universal need) is not very helpful. It helps to be in an organisation so you can identify opportunities for improvement, automation, digitisation etc
+
+Faheem Dehalvi sent the following message at 2:41 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  2:41 PM
+That makes a lot of sense.
+
+I think that’s exactly the gap I’ve been noticing too outside of context, it’s easy to build “useful features” that don’t actually get adopted because they’re not tied to real workflows or constraints.
+
+Being inside an organisation definitely seems like the only way to properly see where automation or insight would actually matter. Do you think what im yearning would be useful for the industry?
+
+Appreciate you sharing that perspective.
+
+
+React with
+👍
+1
+
+Athy Giannopoulos sent the following messages at 8:02 PM
+View Athy’s profileAthy Giannopoulos
+Athy Giannopoulos   8:02 PM
+No problem.....
+
+7.Hi Deji,
+
+Came across Mirrorly and really liked the framing especially the idea of reverse engineering why something works instead of just staring at dashboards.
+
+I’m building in a slightly adjacent space, but more from the angle of trying to understand how “signals to decisions” actually form in messy real-world data. Still early, mostly exploring and learning while building.
+
+Would be really interested to hear how you think about what actually makes marketing intelligence *actionable* vs just informative.
+
+Thanks,
+Faheem
+
+Ayodeji Olowu sent the following message at 2:48 PM
+View Ayodeji’s profileAyodeji Olowu
+Ayodeji Olowu   2:48 PM
+Hey Faheem, thank you for reaching out. I’d definitely love to hear about what your bidding and share my perspective when I was working on Mirrorly. 
+
+Faheem Dehalvi sent the following messages at 2:51 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  2:51 PM
+https://drive.google.com/file/d/14ylsVpNKgHrY2EUvUOLPFIviZZSUnHOo/view?usp=sharing 
+
+heres a demo
+
+absolutely lets have a chat
+
+Ayodeji Olowu sent the following messages at 2:56 PM
+View Ayodeji’s profileAyodeji Olowu
+Ayodeji Olowu   2:56 PM
+Alright bro, I’ll take a look at the demo tomorrow and share my feedback and we can even hop on a quick call 
+
+Where are you based ? 
+
+Faheem Dehalvi sent the following messages at 2:57 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  2:57 PM
+im based in melbourne
+
+itd be amazing if i get to hop on a call with you
+
+Ayodeji Olowu sent the following message at 2:58 PM
+View Ayodeji’s profileAyodeji Olowu
+Ayodeji Olowu   2:58 PM
+Alright bro. I’ll get back to you tomorrow 
+
+Faheem Dehalvi sent the following messages at 2:58 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  2:58 PM
+Ayodeji: Alright bro. I’ll get back to you tomorrow
+🥲
+😅
+🥳
+
+
+
+Alr mahn! ill make sure t drop a reminder ping
+
+
+8. Hello Ms Bindi,
+
+Came across The Aluna Foundry and your thinking around systems, rhythm, and protecting complexity without burning people out—really resonated with how I’ve been observing large-scale systems work.
+
+I’m still early in my journey, but I’ve been thinking a lot about how clarity actually emerges in complex environments, especially when multiple layers of systems, people, and decisions overlap.
+
+Would love to learn how you think about designing structure without over-constraining the system.
+
+Thanks,
+Faheem
+
+9. Hi James,
+
+I’m a student building in digital health and I really resonated with your post about simplifying care systems and removing unnecessary complexity.
+
+I don’t come from a medical background, so a lot of what I notice is just from trying to understand systems as a user—and I keep running into how confusing workflows and decision layers become in healthcare.
+
+I’ve been thinking a lot about how much clarity matters more than features in these systems, especially for clinicians and patients.
+
+Would love to hear how you think about that trade-off while building.
+
+Thanks,
+Faheem
+
+10. Hi Devin,
+
+Konnect is a really interesting take—especially the focus on consent and mental wellness in dating.
+
+I’ve worked closely with a friend building in a similar space, and one thing that stood out is how hard it is to understand *real connection vs surface-level engagement* from user behaviour.
+
+I’ve been building a layer that segments users based on interaction patterns and signals compatibility + intent more meaningfully—could be interesting for something like Konnect.
+
+Would love to exchange thoughts if you’re open.
+
+Thanks,
+Faheem
+
+11. 
+Faheem Dehalvi  (He/Him)  1:50 PM
+🥲
+😅
+🥳
+
+
+
+Hi Abhishek,
+
+Saw your background across product + analytics (and your work at CropBytes)—really like how you’re thinking at the intersection of AI and strategy.
+
+I’m building an AI layer that sits on top of product data and turns it into clear segmentation + decision signals (what to prioritise, who to target, what to improve). Feels like the kind of thing that could plug into product-led growth systems.
+
+Since you’re building in a similar space, would love to exchange notes and get your take.
+
+Thanks,
+Faheem
+
+12. Heyy Simon, 
+
+I'm a curious builder i am building a ML pipeline that converts raw data to properly segmented and sensible insight with reports and visualization. 
+
+This works for any kind of industry we could scale to a plugin product, id love feedback on it
+
+Regards 
+Faheem Dehalvi
+
+Tuesday
+Simon Cable MAICD sent the following message at 1:40 PM
+View Simon’s profileSimon Cable MAICD
+Simon Cable MAICD   1:40 PM
+Hi mate, 
+
+Happy to provide you with any feedback, please let me know how I could assist. 
+
+Cheers,
+Simon
+
+Faheem Dehalvi sent the following messages at 1:42 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  1:42 PM
+https://drive.google.com/file/d/14ylsVpNKgHrY2EUvUOLPFIviZZSUnHOo/view?usp=sharing 
+
+here a link to the video of the demo Simon
+
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  1:44 PM
+🥲
+😅
+🥳
+
+
+
+we can apply this to anywhere from segmenting students in a LMS to segmenting cyber security query logs to plugging it into CRMs for insights and business decisions. 
+
+people have a lot of data but dont know how to use it, i can help there. 
+
+let me know the first place you feel you could use this maybe we can work it out
+
+
+13. Hi Keith,
+
+Saw your work at Everlab—really interesting how you’re scaling growth around AI-driven preventive health.
+
+I’m building a lightweight ML layer that turns raw product/user data into clear segmentation + actionable insights (what to target, retain, or improve). Feels like it could plug well into growth teams like yours.
+
+Would love your quick feedback on whether something like this is useful in your world.
+
+Thanks,
+Faheem
+
+
+14. Hey Hey Rye,
+
+I was at the last Claude Code meetup at stone and chalk
+
+I'm jus a curious student and a builder.
+
+Imagine Raw data converted to insights automatically
+I’m building a budget-aware autonomous data processing pipeline.
+
+It segments data, runs deterministic transforms, and only escalates to AI when a decision boundary is reached. So instead of “LLM for everything,” it treats reasoning as a scarce resource.
+
+Net effect: lower token cost + more controlled decision-making.
+
+Would appreciate your thoughts on where this kind of system could be applied or if you know anyone who would be interested to scale this
+
+Thankyou so much for the read 😊
+
+Regards
+Faheem Dehalvi
+
+Rye Smith sent the following message at 6:44 PM
+View Rye’s profileRye Smith
+Rye Smith   6:44 PM
+That sounds awesome! Would love more information!
+
+Rye
+
+Faheem Dehalvi sent the following messages at 6:48 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  6:48 PM
+So it’s like, you have an existing data base maybe on aws and then you jus plug this 
+
+It makes real-time segmentation of the customer base so you can use those insights for your business be it marketing or operations 
+
+Kinda like a consulting agent 
+
+
+15. Heyy Div, 
+
+I'm a curious builder i am building a ML pipeline that converts raw data to properly segmented and sensible insight with reports and visualization. 
+
+This works for any kind of industry we could scale to a plugin product, id love feedback on it
+
+Regards 
+Faheem Dehalvi(Edited)
+
+Div Misra sent the following message at 3:13 PM
+View Div’s profileDiv Misra
+Div Misra   3:13 PM
+Hi Faheem - Sure, how can I help? 
+
+Faheem Dehalvi sent the following messages at 3:15 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  3:15 PM
+i wanna scale it with a startup that might actually make good use of it
+
+would you be open to introducing me to anyone that might have a similar vision ?
+
+Div Misra sent the following message at 3:17 PM
+View Div’s profileDiv Misra
+Div Misra   3:17 PM
+Not really, I would suggest you go to different AI meets/events, its a good place to run into people with similar ideas and networking. 
+
+Faheem Dehalvi sent the following message at 3:18 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  3:18 PM
+Oh im actually on it connected to the ML AI community in Melbourne
+
+Div Misra sent the following message at 3:18 PM
+View Div’s profileDiv Misra
+Div Misra   3:18 PM
+Nice, go to their events and talk to people, you will find the right crowd there. 
+
+Faheem Dehalvi sent the following message at 3:19 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  3:19 PM
+what makes these products actually usable? im making this product in such a way it can be a plug and play for apps like hubspot and works properly for even non technical stake holders
+
+Div Misra sent the following message at 3:23 PM
+View Div’s profileDiv Misra
+Div Misra   3:23 PM
+I am not really sure, what specific products you are referring to. If I come across anyone who may be interested Ill be sure to pass your contact onto them. Thanks 
+
+Faheem Dehalvi sent the following messages at 3:26 PM
+View Faheem’s profileFaheem Dehalvi
+Faheem Dehalvi  (He/Him)  3:26 PM
+🥲
+😅
+🥳
+
+
+
+Alright Div, Thankyou so much!
+
