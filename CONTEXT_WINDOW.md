@@ -73,6 +73,30 @@ Wire Antigravity to the local server with a config like:
 }
 ```
 
+## Kakiyo Claude Conversion Guide Integration
+Reference: https://kakiyo.notion.site/claude-conversion-guide
+
+### Key Learning: TOP 1% Sales Reps Book 2-5 Meetings/Day Using CLAUDE + KAKIYO
+
+**Critical Sections to Implement:**
+1. **Why you're not booking meetings on LinkedIn** - Diagnostic of common outreach failures
+2. **The EXACT prompts booking the top 1% sales reps 2-5 meetings/day** - Specific Claude prompts that drive conversions
+3. **How to teach your AI what you sell** - Context window strategy for AI personalization
+4. **Test before you burn your lead list** - Validation methodology before scaling
+
+### Strategy Insights for Faheem's System
+- Prompts need to be tested on a small batch before full deployment
+- AI must learn the exact positioning/value prop (what Faheem sells)
+- Pattern matching from past successful DMs is the foundation (already implemented)
+- Personalization + specific reference to prospect's work = higher reply rates
+- Tone consistency across all messages critical for brand trust
+
+### Integration Points
+- Update `agent.py` prompts with Kakiyo-validated message structures
+- Implement A/B testing framework before bulk messaging
+- Add confidence scoring tied to pattern matching (already in place)
+- Voice profile should emphasize specific, data-driven positioning
+
 ## Useful Files
 - `agent.py`
 - `supabase_database.py`
@@ -83,4 +107,4 @@ Wire Antigravity to the local server with a config like:
 - `CONTEXT_WINDOW.md`
 
 ## Practical Handoff Summary
-The project is in a good shape for an Antigravity MCP setup. The app logic and voice model are already in place. The last mile is just installing the MCP runtime and registering the local server in Antigravity's config file.
+The project is in a good shape for a Kakiyo-aligned LinkedIn outreach system. The core voice model and pattern matching are in place. Next phase: integrate TOP 1% sales rep prompts, implement testing framework before scaling, and validate conversion methodology with small batch testing.
