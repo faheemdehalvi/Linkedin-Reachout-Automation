@@ -15,9 +15,9 @@ class SupabaseLinkedInDatabase:
         try:
             # Test connection
             response = self.client.table('people').select("*").limit(1).execute()
-            print("✓ Connected to Supabase")
+            print("SUCCESS: Connected to Supabase")
         except Exception as e:
-            print(f"⚠ Supabase connection error: {e}")
+            print(f"WARNING: Supabase connection error: {e}")
             print("Make sure tables are created in Supabase dashboard")
     
     def add_reference_dm(self, recipient_name, recipient_title, recipient_company, message, context, success_indicator):
@@ -32,9 +32,9 @@ class SupabaseLinkedInDatabase:
                 'success_indicator': success_indicator,
                 'created_at': datetime.utcnow().isoformat()
             }).execute()
-            print(f"✓ Added reference DM for {recipient_name}")
+            print(f"OK: Added reference DM for {recipient_name}")
         except Exception as e:
-            print(f"✗ Error adding reference DM: {e}")
+            print(f"ERROR: Error adding reference DM: {e}")
     
     def add_person(self, linkedin_profile_id, name, title, company, industry, personality_traits, interests, notes=""):
         """Add a new person to the database"""
@@ -52,12 +52,12 @@ class SupabaseLinkedInDatabase:
                 'created_at': datetime.utcnow().isoformat(),
                 'updated_at': datetime.utcnow().isoformat()
             }).execute()
-            print(f"✓ Added person: {name}")
+            print(f"OK: Added person: {name}")
         except Exception as e:
             if "duplicate" in str(e).lower():
-                print(f"⚠ Person already exists: {name}")
+                print(f"WARNING: Person already exists: {name}")
             else:
-                print(f"✗ Error adding person: {e}")
+                print(f"ERROR: Error adding person: {e}")
     
     def get_reference_dms(self):
         """Get all reference DMs for agent analysis"""
@@ -65,7 +65,7 @@ class SupabaseLinkedInDatabase:
             response = self.client.table('reference_dms').select("*").order('created_at', desc=True).execute()
             return response.data if response.data else []
         except Exception as e:
-            print(f"✗ Error fetching reference DMs: {e}")
+            print(f"ERROR: Error fetching reference DMs: {e}")
             return []
     
     def get_all_people(self):
@@ -74,7 +74,7 @@ class SupabaseLinkedInDatabase:
             response = self.client.table('people').select("*").order('last_contacted').execute()
             return response.data if response.data else []
         except Exception as e:
-            print(f"✗ Error fetching people: {e}")
+            print(f"ERROR: Error fetching people: {e}")
             return []
     
     def get_people_by_industry(self, industry):
@@ -83,7 +83,7 @@ class SupabaseLinkedInDatabase:
             response = self.client.table('people').select("*").eq('industry', industry).execute()
             return response.data if response.data else []
         except Exception as e:
-            print(f"✗ Error fetching people by industry: {e}")
+            print(f"ERROR: Error fetching people by industry: {e}")
             return []
     
     def save_daily_suggestion(self, person_id, suggested_message, confidence_score):
@@ -97,7 +97,7 @@ class SupabaseLinkedInDatabase:
                 'created_at': datetime.utcnow().isoformat()
             }).execute()
         except Exception as e:
-            print(f"✗ Error saving suggestion: {e}")
+            print(f"ERROR: Error saving suggestion: {e}")
     
     def update_person_contacted(self, person_id):
         """Update person's last contact date and increment contact count"""
@@ -114,9 +114,9 @@ class SupabaseLinkedInDatabase:
                     'updated_at': datetime.utcnow().isoformat()
                 }).eq('id', person_id).execute()
                 
-                print(f"✓ Updated person contact record (total contacts: {current_count + 1})")
+                print(f"OK: Updated person contact record (total contacts: {current_count + 1})")
         except Exception as e:
-            print(f"✗ Error updating contact: {e}")
+            print(f"ERROR: Error updating contact: {e}")
     
     def get_todays_suggestions(self):
         """Get today's suggestions that haven't been acted on"""
@@ -125,7 +125,7 @@ class SupabaseLinkedInDatabase:
             response = self.client.table('daily_suggestions').select("*").eq('date', today).eq('action_taken', False).execute()
             return response.data if response.data else []
         except Exception as e:
-            print(f"✗ Error fetching today's suggestions: {e}")
+            print(f"ERROR: Error fetching today's suggestions: {e}")
             return []
 
 

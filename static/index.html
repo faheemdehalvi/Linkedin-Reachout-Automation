@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faheem's LinkedIn AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-effect">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-robot"></i> Agent Hub</h2>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="btn-suggestions" class="btn primary-btn">
+                    <i class="fa-solid fa-lightbulb"></i> Daily Suggestions
+                </button>
+                <button id="btn-analyze" class="btn secondary-btn">
+                    <i class="fa-solid fa-chart-pie"></i> Analyze DMs
+                </button>
+                <button id="btn-voice" class="btn secondary-btn">
+                    <i class="fa-solid fa-microphone-lines"></i> View Voice Profile
+                </button>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="dot pulse"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container glass-effect">
+            <header class="chat-header">
+                <h1>LinkedIn Outreach Assistant</h1>
+                <p>Data &rarr; Signals</p>
+            </header>
+            
+            <div id="chat-messages" class="messages-area">
+                <!-- Welcome Message -->
+                <div class="message ai-message fade-in">
+                    <div class="avatar"><i class="fa-solid fa-brain"></i></div>
+                    <div class="message-content">
+                        <p>Hi Faheem. I'm ready to help you convert data into signals and book more meetings. What would you like to do today?</p>
+                        <div class="suggestion-chips">
+                            <span class="chip" onclick="document.getElementById('chat-input').value='Suggest people to contact'; document.getElementById('send-btn').click();">Suggest people to contact</span>
+                            <span class="chip" onclick="document.getElementById('chat-input').value='Analyze patterns'; document.getElementById('send-btn').click();">Analyze patterns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <div class="input-wrapper glass-effect">
+                    <textarea id="chat-input" placeholder="Message the agent..." rows="1" autofocus></textarea>
+                    <button id="send-btn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

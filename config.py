@@ -22,7 +22,8 @@ DATABASE_PATH = DB_DIR / "linkedin_context.db"
 
 # API & Model Configuration (update with your keys)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-key-here")
-
+OPENROUTER_API_KEY = "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"
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 # Agent settings
 MAX_SUGGESTIONS_PER_DAY = 5
 MIN_CONFIDENCE_SCORE = 0.7

@@ -16,30 +16,19 @@ class LinkedInAgent:
         self.system_prompt = """You are Faheem's LinkedIn outreach agent. 
 Your job is to generate personalized messages that sound authentic to Faheem's voice.
 
-Key principles:
-1. Reference their SPECIFIC work - not generic praise
-2. Connect Faheem's data→signals expertise to THEIR world specifically
-3. Ask genuine questions about their problems, don't pitch features
-4. Keep it concise, curious, respectful
-5. Use phrases like: "curious builder", "still early", "would love to hear how you think about"
-6. Avoid being salesy - focus on learning and value exchange
+Key principles (High-Conversion SPIN/Challenger approach):
+1. Lead with Insight: Reference their SPECIFIC work and connect it to a broader industry shift.
+2. Focus on Pain/Friction: Connect Faheem's data→signals expertise to the specific frictions in THEIR world.
+3. Extreme Brevity: Keep it under 4 sentences. Mobile-friendly.
+4. Soft Call to Action: Ask a genuine, low-friction question about their problems, don't pitch features or ask for a meeting yet.
+5. Use phrases like: "curious builder", "still early", "how are you navigating [specific problem]?"
+6. Avoid being salesy - focus on learning and value exchange.
 
 Message structure:
-- Line 1: Reference their specific work (company/post/role)
-- Line 2-3: Explain what Faheem builds (tailored to their industry)
-- Line 4: Ask a genuine question about their world
-- Closing: Casual, warm, no hard sell
-
-Examples of good openers:
-- "Saw your work at [company] around [specific thing]—really interesting"
-- "Your point about [specific thing] really resonated with me"
-- "I noticed you're thinking about [X], I've been exploring something adjacent"
-
-Examples of good questions:
-- "How do you think about [their problem]?"
-- "What's actually made these systems useful for your team?"
-- "Would love to hear your take on..."
-- "Curious how you approach [their domain problem]?"
+- Line 1: Insight/Observation (Reference their specific work/company/post)
+- Line 2: The Problem/Friction (Introduce the problem you solve)
+- Line 3: Soft CTA / Question (Ask a curious question about how they handle it)
+- Closing: "Thanks, Faheem"
 
 Tone: Genuine. Curious. Early-stage. Problem-focused not product-focused.
 """
@@ -75,11 +64,11 @@ Tone: Genuine. Curious. Early-stage. Problem-focused not product-focused.
         reference_dms = self.analyze_reference_dms()
         
         if not people:
-            print("⚠ No people in database. Add some first!")
+            print("WARNING: No people in database. Add some first!")
             return []
         
         if not reference_dms:
-            print("⚠ No reference DMs. Add some successful DMs first!")
+            print("WARNING: No reference DMs. Add some successful DMs first!")
             return []
         
         suggestions = []
@@ -132,9 +121,74 @@ Tone: Genuine. Curious. Early-stage. Problem-focused not product-focused.
         # Default to first DM if no match
         return reference_dms["dms"][0] if reference_dms["dms"] else None
     
-    def _personalize_message(self, base_message, name, title, company, interests, traits):
-        """Personalize a message template for specific person using Faheem's voice"""
+    def _get_web_context(self, name, company):
+        """Fetch recent context about the person or company using DuckDuckGo."""
+        if not company:
+            return "No recent web context available."
         
+        try:
+            from duckduckgo_search import DDGS
+            query = f'"{company}" recent news OR "{name} {company}"'
+            results = DDGS().text(query, max_results=2)
+            context_pieces = []
+            for r in results:
+                context_pieces.append(f"- {r.get('title', '')}: {r.get('body', '')}")
+            
+            if context_pieces:
+                return "\n".join(context_pieces)
+            return "No relevant recent news found."
+        except Exception as e:
+            print(f"Web search failed: {e}")
+            return "Web search unavailable."
+
+    def _personalize_message(self, base_message, name, title, company, interests, traits):
+        """Personalize a message template for specific person using Faheem's voice and OpenRouter"""
+        try:
+            from openai import OpenAI
+            from config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL
+            
+            client = OpenAI(
+                base_url=OPENROUTER_BASE_URL,
+                api_key=OPENROUTER_API_KEY,
+            )
+            
+            if OPENROUTER_API_KEY == "your-key-here" or not OPENROUTER_API_KEY:
+                raise ValueError("OpenRouter API key not set")
+
+            # Fetch live web context
+            web_context = self._get_web_context(name, company)
+
+            prompt = f"""
+Draft a LinkedIn outreach message to:
+Name: {name}
+Title: {title}
+Company: {company}
+Interests: {interests}
+Traits: {traits}
+
+Web Search Context (Recent News/Info):
+{web_context}
+
+Base Template/Reference Message: "{base_message}"
+
+Follow the system prompt guidelines strictly. Use the web context if it reveals something relevant to reference. Output ONLY the message text.
+"""
+            response = client.chat.completions.create(
+                model="nvidia/nemotron-3-super-120b-a12b:free",
+                messages=[
+                    {"role": "system", "content": self.system_prompt},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=250,
+                temperature=0.7
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            print(f"OpenRouter API fallback triggered ({e})")
+            return self._fallback_personalize_message(name, title, company, interests, traits)
+
+    def _fallback_personalize_message(self, name, title, company, interests, traits):
+        """Fallback hardcoded personalization if OpenAI is unavailable"""
         # Generate personalized message in Faheem's style
         if title:
             title_lower = title.lower()
