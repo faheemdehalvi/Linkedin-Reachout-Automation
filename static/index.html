@@ -1,74 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faheem's LinkedIn AI</title>
+    <title>Faheem's LinkedIn AI — Outreach Intelligence</title>
+    <meta name="description" content="AI-powered LinkedIn outreach system with personalized messaging, context windows, and curated templates">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar glass-effect">
-            <div class="sidebar-header">
-                <h2><i class="fa-solid fa-robot"></i> Agent Hub</h2>
+
+        <!-- Left Sidebar — Navigation -->
+        <aside class="sidebar glass-panel" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <h2>LinkedIn AI</h2>
+                    <span class="brand-tagline">Data &rarr; Signals</span>
+                </div>
             </div>
-            
-            <div class="action-buttons">
-                <button id="btn-suggestions" class="btn primary-btn">
-                    <i class="fa-solid fa-lightbulb"></i> Daily Suggestions
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="connection-texts" id="nav-connection-texts">
+                    <div class="nav-icon"><i class="fa-solid fa-comments"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Connection Texts</span>
+                        <span class="nav-desc">25 AI recommendations</span>
+                    </div>
+                    <span class="nav-badge" id="badge-texts">-</span>
                 </button>
-                <button id="btn-analyze" class="btn secondary-btn">
-                    <i class="fa-solid fa-chart-pie"></i> Analyze DMs
+
+                <button class="nav-item" data-tab="curated-texts" id="nav-curated-texts">
+                    <div class="nav-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Curated Texts</span>
+                        <span class="nav-desc">25 personal templates</span>
+                    </div>
+                    <span class="nav-badge" id="badge-curated">-</span>
                 </button>
-                <button id="btn-voice" class="btn secondary-btn">
-                    <i class="fa-solid fa-microphone-lines"></i> View Voice Profile
+
+                <button class="nav-item" data-tab="connection-requests" id="nav-connection-requests">
+                    <div class="nav-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Connection Requests</span>
+                        <span class="nav-desc">25 prospect intros</span>
+                    </div>
+                    <span class="nav-badge" id="badge-requests">-</span>
                 </button>
-            </div>
-            
+
+                <button class="nav-item" data-tab="auto-send" id="nav-auto-send">
+                    <div class="nav-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Auto-Send</span>
+                        <span class="nav-desc">Generate & DM directly</span>
+                    </div>
+                    <span class="nav-badge" id="badge-auto" style="background:rgba(239,68,68,0.15);color:var(--red)">LIVE</span>
+                </button>
+
+                <button class="nav-item" data-tab="campaigns" id="nav-campaigns" onclick="loadCampaigns()">
+                    <div class="nav-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Campaigns</span>
+                        <span class="nav-desc">Pipeline & scheduling</span>
+                    </div>
+                    <span class="nav-badge" id="badge-campaigns">-</span>
+                </button>
+
+                <button class="nav-item" data-tab="analytics" id="nav-analytics" onclick="loadAnalytics()">
+                    <div class="nav-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Analytics</span>
+                        <span class="nav-desc">Sent, accepted, replied</span>
+                    </div>
+                </button>
+
+                <button class="nav-item" data-tab="chat" id="nav-chat">
+                    <div class="nav-icon"><i class="fa-solid fa-robot"></i></div>
+                    <div class="nav-label">
+                        <span class="nav-title">Agent Chat</span>
+                        <span class="nav-desc">Talk to the AI</span>
+                    </div>
+                </button>
+            </nav>
+
             <div class="sidebar-footer">
                 <div class="status-indicator">
                     <span class="dot pulse"></span>
                     <span>System Online</span>
                 </div>
-            </div>
-        </aside>
-
-        <!-- Main Chat Area -->
-        <main class="chat-container glass-effect">
-            <header class="chat-header">
-                <h1>LinkedIn Outreach Assistant</h1>
-                <p>Data &rarr; Signals</p>
-            </header>
-            
-            <div id="chat-messages" class="messages-area">
-                <!-- Welcome Message -->
-                <div class="message ai-message fade-in">
-                    <div class="avatar"><i class="fa-solid fa-brain"></i></div>
-                    <div class="message-content">
-                        <p>Hi Faheem. I'm ready to help you convert data into signals and book more meetings. What would you like to do today?</p>
-                        <div class="suggestion-chips">
-                            <span class="chip" onclick="document.getElementById('chat-input').value='Suggest people to contact'; document.getElementById('send-btn').click();">Suggest people to contact</span>
-                            <span class="chip" onclick="document.getElementById('chat-input').value='Analyze patterns'; document.getElementById('send-btn').click();">Analyze patterns</span>
-                        </div>
+                <div class="sidebar-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="stat-people">0</span>
+                    <span class="stat-label">People</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="stat-dms">0</span>
+                    <span class="stat-label">Ref DMs</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="input-area">
-                <div class="input-wrapper glass-effect">
-                    <textarea id="chat-input" placeholder="Message the agent..." rows="1" autofocus></textarea>
-                    <button id="send-btn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </aside>
+
+        <!-- Center Panel — Main Content -->
+        <main class="main-panel glass-panel" id="main-panel">
+
+            <!-- Tab: Connection Texts -->
+            <section class="tab-content active" id="tab-connection-texts">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-comments"></i> Connection Texts</h1>
+                        <p class="tab-subtitle">AI-generated personalized messages for your existing connections</p>
+                    </div>
+                    <button class="btn-generate" id="btn-gen-texts" onclick="generateConnectionTexts()">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate 25
+                    </button>
+                </header>
+                <div class="cards-grid" id="grid-connection-texts">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <h3>Ready to generate</h3>
+                        <p>Click "Generate 25" to create personalized messages for your connections</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Curated Texts -->
+            <section class="tab-content" id="tab-curated-texts">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-pen-fancy"></i> Curated Texts</h1>
+                        <p class="tab-subtitle">Your personally crafted message templates</p>
+                    </div>
+                    <button class="btn-generate" id="btn-add-curated" onclick="showAddCuratedForm()">
+                        <i class="fa-solid fa-plus"></i> Add Template
+                    </button>
+                </header>
+
+                <!-- Add/Edit Form (hidden by default) -->
+                <div class="curated-form glass-card" id="curated-form" style="display:none;">
+                    <h3 id="curated-form-title">New Curated Text</h3>
+                    <input type="hidden" id="curated-edit-id" value="">
+                    <div class="form-row">
+                        <input type="text" id="curated-title" placeholder="Template title (e.g., 'Data Founders Hook')" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <textarea id="curated-message" placeholder="Message template... Use {name}, {company}, {title} as placeholders" class="form-textarea" rows="5"></textarea>
+                    </div>
+                    <div class="form-row-split">
+                        <input type="text" id="curated-industry" placeholder="Target industry" class="form-input">
+                        <input type="text" id="curated-role" placeholder="Target role" class="form-input">
+                        <input type="text" id="curated-tags" placeholder="Tags (comma-sep)" class="form-input">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-save" onclick="saveCuratedText()"><i class="fa-solid fa-check"></i> Save</button>
+                        <button class="btn-cancel" onclick="hideCuratedForm()"><i class="fa-solid fa-xmark"></i> Cancel</button>
+                    </div>
+                </div>
+
+                <div class="cards-grid" id="grid-curated-texts">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-pen-fancy"></i>
+                        <h3>No curated texts yet</h3>
+                        <p>Add your first message template to get started</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Connection Requests -->
+            <section class="tab-content" id="tab-connection-requests">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-user-plus"></i> Connection Requests</h1>
+                        <p class="tab-subtitle">AI-generated intro notes for new prospects</p>
+                    </div>
+                    <button class="btn-generate" id="btn-gen-requests" onclick="generateConnectionRequests()">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate 25
+                    </button>
+                </header>
+                <div class="cards-grid" id="grid-connection-requests">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <h3>Ready to generate</h3>
+                        <p>Click "Generate 25" to create personalized connection request notes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Auto-Send -->
+            <section class="tab-content" id="tab-auto-send">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-rocket"></i> Auto-Send Pipeline</h1>
+                        <p class="tab-subtitle">Generate AI messages & send directly to LinkedIn DMs</p>
+                    </div>
+                </header>
+                <div class="cards-grid" id="auto-send-content" style="gap:16px;">
+
+                    <!-- Controls -->
+                    <div class="auto-controls glass-card" id="auto-controls">
+                        <div class="auto-control-row">
+                            <div class="auto-field">
+                                <label>Mode</label>
+                                <select id="auto-mode" class="form-input">
+                                    <option value="all">All (DMs + Requests)</option>
+                                    <option value="texts">Connection Texts (DMs only)</option>
+                                    <option value="requests">Connection Requests only</option>
+                                </select>
+                            </div>
+                            <div class="auto-field">
+                                <label>Count per type</label>
+                                <input type="number" id="auto-count" class="form-input" value="25" min="1" max="25">
+                            </div>
+                            <div class="auto-field" style="flex:0;">
+                                <label>&nbsp;</label>
+                                <button class="btn-launch" id="btn-launch" onclick="launchAutoOutreach()">
+                                    <i class="fa-solid fa-rocket"></i> Launch Auto-Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Status -->
+                    <div class="auto-status glass-card" id="auto-status" style="display:none;">
+                        <div class="auto-status-header">
+                            <div class="auto-phase" id="auto-phase">
+                                <span class="phase-dot"></span>
+                                <span class="phase-text">Initializing...</span>
+                            </div>
+                            <button class="btn-stop" id="btn-stop" onclick="stopAutoOutreach()">
+                                <i class="fa-solid fa-stop"></i> Stop
+                            </button>
+                        </div>
+
+                        <!-- Progress bars -->
+                        <div class="auto-progress-section">
+                            <div class="progress-item">
+                                <div class="progress-label"><i class="fa-solid fa-brain"></i> Generating</div>
+                                <div class="progress-bar-wrap"><div class="progress-bar-fill gen-fill" id="gen-bar" style="width:0%"></div></div>
+                                <div class="progress-numbers" id="gen-numbers">0 / 0</div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label"><i class="fa-solid fa-paper-plane"></i> Sending</div>
+                                <div class="progress-bar-wrap"><div class="progress-bar-fill send-fill" id="send-bar" style="width:0%"></div></div>
+                                <div class="progress-numbers" id="send-numbers">0 / 0</div>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="auto-stats">
+                            <div class="auto-stat">
+                                <span class="auto-stat-value" id="auto-sent" style="color:var(--green)">0</span>
+                                <span class="auto-stat-label">Sent</span>
+                            </div>
+                            <div class="auto-stat">
+                                <span class="auto-stat-value" id="auto-failed" style="color:var(--red)">0</span>
+                                <span class="auto-stat-label">Failed</span>
+                            </div>
+                            <div class="auto-stat">
+                                <span class="auto-stat-value" id="auto-total" style="color:var(--accent)">0</span>
+                                <span class="auto-stat-label">Total</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Log -->
+                    <div class="auto-log glass-card" id="auto-log" style="display:none;">
+                        <div class="auto-log-header">
+                            <i class="fa-solid fa-terminal"></i> Live Activity Log
+                        </div>
+                        <div class="auto-log-body" id="auto-log-body"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Tab: Campaigns (Pipeline) -->
+            <section class="tab-content" id="tab-campaigns">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-bullhorn"></i> Campaigns</h1>
+                        <p class="tab-subtitle">Automated outreach campaigns with daily limits &amp; scheduling</p>
+                    </div>
+                    <button class="btn-generate" id="btn-new-campaign" onclick="showCampaignForm()">
+                        <i class="fa-solid fa-plus"></i> New Campaign
+                    </button>
+                </header>
+
+                <!-- New Campaign Form -->
+                <div class="curated-form glass-card" id="campaign-form" style="display:none;">
+                    <h3 id="campaign-form-title">New Campaign</h3>
+                    <div class="form-row-split">
+                        <input type="text" id="cmp-name" placeholder="Campaign name (e.g. April Founders)" class="form-input">
+                        <select id="cmp-mode" class="form-input">
+                            <option value="all">All (DMs + Requests)</option>
+                            <option value="texts">DMs only</option>
+                            <option value="requests">Connection Requests only</option>
+                        </select>
+                        <input type="number" id="cmp-limit" class="form-input" value="25" min="1" max="50" placeholder="Daily limit">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-save" onclick="saveCampaign()"><i class="fa-solid fa-check"></i> Create</button>
+                        <button class="btn-cancel" onclick="hideCampaignForm()"><i class="fa-solid fa-xmark"></i> Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Import Leads Panel (shown per-campaign) -->
+                <div class="curated-form glass-card" id="import-form" style="display:none;">
+                    <h3>Import Leads — <span id="import-cmp-name"></span></h3>
+                    <input type="hidden" id="import-cmp-id">
+                    <div class="form-row-split">
+                        <select id="import-status" class="form-input">
+                            <option value="connection">Existing Connections (DM)</option>
+                            <option value="prospect">Prospects (Connection Request)</option>
+                        </select>
+                        <input type="number" id="import-limit" class="form-input" value="100" min="1" max="500" placeholder="Max leads">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-save" onclick="importLeads()"><i class="fa-solid fa-file-import"></i> Import from Supabase</button>
+                        <button class="btn-cancel" onclick="hideImportForm()"><i class="fa-solid fa-xmark"></i> Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Run Campaign Panel -->
+                <div class="curated-form glass-card" id="run-form" style="display:none;">
+                    <h3>Run Campaign — <span id="run-cmp-name"></span></h3>
+                    <input type="hidden" id="run-cmp-id">
+                    <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:12px">LinkedIn credentials are only needed once per session. Leave blank if already logged in.</p>
+                    <div class="form-row-split">
+                        <input type="email" id="run-email" class="form-input" placeholder="LinkedIn email (optional)">
+                        <input type="password" id="run-password" class="form-input" placeholder="LinkedIn password (optional)">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-save" style="background:var(--red)" onclick="runCampaign()"><i class="fa-solid fa-rocket"></i> Start Pipeline</button>
+                        <button class="btn-cancel" onclick="hideRunForm()"><i class="fa-solid fa-xmark"></i> Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Campaigns List -->
+                <div class="cards-grid" id="grid-campaigns">
+                    <div class="empty-state"><i class="fa-solid fa-bullhorn"></i><h3>No campaigns yet</h3><p>Create your first campaign to start the automated pipeline</p></div>
+                </div>
+
+                <!-- Job Monitor (shown when campaign is selected) -->
+                <div id="job-monitor" style="display:none;padding:0 24px 16px;">
+                    <div class="auto-status glass-card" id="jm-status">
+                        <div class="auto-status-header">
+                            <div class="auto-phase" id="jm-phase"><span class="phase-dot" id="jm-dot"></span><span id="jm-phase-text">Idle</span></div>
+                            <button class="btn-stop" id="jm-cancel-btn" onclick="cancelActiveJob()" style="display:none"><i class="fa-solid fa-stop"></i> Cancel</button>
+                        </div>
+                        <div class="auto-progress-section">
+                            <div class="progress-item">
+                                <div class="progress-label"><i class="fa-solid fa-brain"></i> Generating</div>
+                                <div class="progress-bar-wrap"><div class="progress-bar-fill gen-fill" id="jm-gen-bar" style="width:0%"></div></div>
+                                <div class="progress-numbers" id="jm-gen-nums">—</div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label"><i class="fa-solid fa-paper-plane"></i> Sending</div>
+                                <div class="progress-bar-wrap"><div class="progress-bar-fill send-fill" id="jm-send-bar" style="width:0%"></div></div>
+                                <div class="progress-numbers" id="jm-send-nums">—</div>
+                            </div>
+                        </div>
+                        <div class="auto-stats">
+                            <div class="auto-stat"><span class="auto-stat-value" id="jm-sent" style="color:var(--green)">0</span><span class="auto-stat-label">Sent</span></div>
+                            <div class="auto-stat"><span class="auto-stat-value" id="jm-failed" style="color:var(--red)">0</span><span class="auto-stat-label">Failed</span></div>
+                            <div class="auto-stat"><span class="auto-stat-value" id="jm-total" style="color:var(--accent)">0</span><span class="auto-stat-label">Total</span></div>
+                        </div>
+                    </div>
+                    <div class="auto-log glass-card" id="jm-log" style="margin-top:12px">
+                        <div class="auto-log-header"><i class="fa-solid fa-terminal"></i> Live Log</div>
+                        <div class="auto-log-body" id="jm-log-body"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Analytics -->
+            <section class="tab-content" id="tab-analytics">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-chart-line"></i> Analytics</h1>
+                        <p class="tab-subtitle">Pipeline performance across all campaigns</p>
+                    </div>
+                    <button class="btn-generate" onclick="loadAnalytics()">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </header>
+                <div class="cards-grid" id="analytics-body" style="gap:16px">
+                    <!-- Stat Cards -->
+                    <div class="an-stat-row" id="an-stats"></div>
+                    <!-- Daily Chart -->
+                    <div class="glass-card an-section" id="an-daily-wrap" style="display:none">
+                        <div class="an-section-title"><i class="fa-solid fa-calendar-days"></i> Daily Sent (Last 7 Days)</div>
+                        <div class="an-chart" id="an-chart"></div>
+                    </div>
+                    <!-- Campaign Breakdown -->
+                    <div class="glass-card an-section" id="an-cmp-wrap" style="display:none">
+                        <div class="an-section-title"><i class="fa-solid fa-table-list"></i> Campaign Breakdown</div>
+                        <table class="an-table" id="an-cmp-table">
+                            <thead><tr><th>Campaign</th><th>Mode</th><th>Leads</th><th>Sent</th><th>Failed</th><th>Pending</th><th>Status</th></tr></thead>
+                            <tbody id="an-cmp-body"></tbody>
+                        </table>
+                    </div>
+                    <!-- Scheduler -->
+                    <div class="glass-card an-section" id="an-scheduler">
+                        <div class="an-section-title"><i class="fa-solid fa-clock"></i> Auto-Scheduler</div>
+                        <div id="an-scheduler-body" style="font-size:0.82rem;color:var(--text-dim);padding-top:8px">Loading...</div>
+                        <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+                            <span style="font-size:0.78rem;color:var(--text-faint)">Interval (hours):</span>
+                            <input type="number" id="scheduler-hours" class="form-input" value="6" min="1" max="24" style="width:80px">
+                            <button class="btn-save" style="padding:6px 14px;font-size:0.78rem" onclick="updateSchedulerInterval()">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Chat -->
+            <section class="tab-content" id="tab-chat">
+                <header class="tab-header">
+                    <div>
+                        <h1><i class="fa-solid fa-robot"></i> Agent Chat</h1>
+                        <p class="tab-subtitle">Talk directly to the AI agent</p>
+                    </div>
+                </header>
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message ai-message fade-in">
+                        <div class="chat-avatar"><i class="fa-solid fa-brain"></i></div>
+                        <div class="message-content">
+                            <p>Hi Faheem. I'm ready to help you convert data into signals. What would you like to do today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="chat-input-wrapper glass-card">
+                        <textarea id="chat-input" placeholder="Message the agent..." rows="1" autofocus></textarea>
+                        <button id="send-btn" class="send-btn" onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Panel — Context Window -->
+        <aside class="context-panel glass-panel" id="context-panel">
+            <div class="context-header">
+                <h2><i class="fa-solid fa-microscope"></i> Context Window</h2>
+                <button class="context-close" onclick="closeContextPanel()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="context-body" id="context-body">
+                <div class="context-empty">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <h3>AI Reasoning</h3>
+                    <p>Click any suggestion card to see the full AI reasoning chain, web research, and pattern matching details</p>
                 </div>
             </div>
-        </main>
+        </aside>
     </div>
-    
+
     <script src="/static/script.js"></script>
 </body>
 </html>

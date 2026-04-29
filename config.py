@@ -1,6 +1,10 @@
 # LinkedIn Automation Configuration
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
 
 # Project paths
 BASE_DIR = Path(__file__).resolve().parent
@@ -13,17 +17,21 @@ DATA_DIR.mkdir(exist_ok=True)
 DB_DIR.mkdir(exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
 
-# Supabase Configuration
-SUPABASE_URL = "https://rschzmdnqfmorvuzzpva.supabase.co"
-SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzY2h6bWRucWZtb3J2dXp6cHZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcwMzk0MjcsImV4cCI6MjA5MjYxNTQyN30.-sD3m00jBmgW90EgNEk6l7_nqWpasBFLRLUCts2EzEQ"
+# Supabase Configuration (loaded from .env)
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY", "")
 
 # Legacy SQLite (fallback)
 DATABASE_PATH = DB_DIR / "linkedin_context.db"
 
-# API & Model Configuration (update with your keys)
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-key-here")
-OPENROUTER_API_KEY = "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"
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+# API & Model Configuration (loaded from .env)
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "nvidia/llama-3.1-nemotron-70b-instruct")
+
 # Agent settings
-MAX_SUGGESTIONS_PER_DAY = 5
+MAX_SUGGESTIONS_PER_DAY = 50
+MAX_CONNECTION_TEXTS = 25
+MAX_CONNECTION_REQUESTS = 25
+MAX_CURATED_TEXTS = 25
 MIN_CONFIDENCE_SCORE = 0.7

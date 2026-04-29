@@ -3,7 +3,7 @@ Setup script to load reference DMs and people into the database
 """
 import json
 import sys
-from supabase_database import SupabaseLinkedInDatabase
+from database import LinkedInDatabase
 
 def print_header(text):
     print("\n" + "="*60)
@@ -140,7 +140,7 @@ def add_from_json(db, json_file):
 def main():
     print_header("🚀 LinkedIn Automation Setup")
     
-    db = SupabaseLinkedInDatabase()
+    db = LinkedInDatabase()
     
     print("\nHow would you like to add data?")
     print("1. Interactive mode (guided input)")

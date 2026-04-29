@@ -139,6 +139,20 @@ class LinkedInDatabase:
         conn.commit()
         conn.close()
 
+    def update_person_contacted(self, person_id):
+        """Update last_contacted date and increment contact_count"""
+        conn = sqlite3.connect(self.db_path)
+        c = conn.cursor()
+        
+        c.execute('''UPDATE people 
+                     SET last_contacted = CURRENT_DATE,
+                         contact_count = contact_count + 1,
+                         updated_at = CURRENT_TIMESTAMP
+                     WHERE id = ?''', (person_id,))
+        
+        conn.commit()
+        conn.close()
+
 
 if __name__ == "__main__":
     db = LinkedInDatabase()

@@ -4,7 +4,7 @@ Run this every day to get personalized outreach suggestions
 """
 import sys
 from datetime import datetime
-from supabase_database import SupabaseLinkedInDatabase
+from database import LinkedInDatabase
 from agent import LinkedInAgent
 
 def print_header(text):
@@ -30,7 +30,7 @@ def main():
     print_header("🤖 LinkedIn Daily Agent - " + datetime.now().strftime("%B %d, %Y"))
     
     # Initialize
-    db = SupabaseLinkedInDatabase()
+    db = LinkedInDatabase()
     agent = LinkedInAgent()
     
     # Check for people in database
@@ -67,7 +67,7 @@ def main():
     choice = input("\nEnter choice (1-4): ").strip()
     
     if choice == "1":
-        person_idx = input("Enter person number (1-5): ").strip()
+        person_idx = input(f"Enter person number (1-{len(suggestions)}): ").strip()
         try:
             person_idx = int(person_idx) - 1
             if 0 <= person_idx < len(suggestions):
@@ -80,7 +80,7 @@ def main():
             print("Invalid input")
     
     elif choice == "2":
-        person_idx = input("Enter person number to refine (1-5): ").strip()
+        person_idx = input(f"Enter person number to refine (1-{len(suggestions)}): ").strip()
         try:
             person_idx = int(person_idx) - 1
             if 0 <= person_idx < len(suggestions):
